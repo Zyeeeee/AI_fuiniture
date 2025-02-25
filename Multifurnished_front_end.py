@@ -25,7 +25,7 @@ def process_image(image_path, user_prompt):
         cast_to=object,
         options={'headers': {'Content-Type': 'multipart/form-data'}},
         files={'image': open(image_path, 'rb')},
-        body={'prompt': user_prompt, 'style': 'digital_illustration', 'strength': 0.5},  # default 0.3
+        body={'prompt': user_prompt, 'style': 'digital_illustration', 'strength': 0.3},  # default 0.3
     )
     # 获取转换后的图片URL
     image_to_image_result = response1['data'][0]['url']
@@ -53,7 +53,7 @@ def process_image2(image_path, user_prompt):
         cast_to=object,
         options={'headers': {'Content-Type': 'multipart/form-data'}},
         files={'image': open(image_path, 'rb')},
-        body={'prompt': user_prompt, 'style': 'digital_illustration', 'strength': 0.5},  # default 0.2
+        body={'prompt': user_prompt, 'style': 'digital_illustration', 'strength': 0.2},  # default 0.2
     )
     # 获取转换后的图片URL
     image_to_image_result = response1['data'][0]['url']
@@ -76,7 +76,7 @@ def process_image2(image_path, user_prompt):
 
 # 主函数
 def main():
-    st.title("AI自定义家具(prompt高强度版)🤩")
+    st.title("AI自定义家具🤩")
 
     # 1. 展示置物架原图
     st.header("预览置物架")
